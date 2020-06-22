@@ -6,9 +6,12 @@
 package GUI;
 
 import Controller.ControllerFoodDiary;
+import Controller.CtrlBB;
+import Model.ModBB;
 import Model.ModUser;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -28,6 +31,7 @@ public class OurApp extends javax.swing.JFrame {
      */
     ModUser u;
     ControllerFoodDiary cfd;
+    CtrlBB cbb;
 
     public ModUser getU() {
         return u;
@@ -39,6 +43,7 @@ public class OurApp extends javax.swing.JFrame {
 
     public OurApp() {
         u = new ModUser("u", 1);
+        
         initComponents();
         
         //set tanggal
@@ -48,7 +53,8 @@ public class OurApp extends javax.swing.JFrame {
         //panggil controller
         cfd = new ControllerFoodDiary(this);
         cfd.isiTable();
-        System.err.println("asu");
+        cbb = new CtrlBB(this);
+        cbb.isiGraph();
     }
 
     /**
@@ -82,6 +88,7 @@ public class OurApp extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         lbl_totalKalori = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        bBGraph2 = new GUI.BBGraph();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -242,11 +249,17 @@ public class OurApp extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 777, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bBGraph2, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 493, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bBGraph2, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Progress", jPanel2);
@@ -348,6 +361,7 @@ public class OurApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private GUI.BBGraph bBGraph2;
     private javax.swing.JButton btn_delMkn;
     private javax.swing.JButton btn_tgl;
     private javax.swing.JButton btn_tmbMkn;
@@ -451,5 +465,16 @@ public class OurApp extends javax.swing.JFrame {
     public void setLbl_totalKalori(JLabel lbl_totalKalori) {
         this.lbl_totalKalori = lbl_totalKalori;
     }
+
+    public BBGraph getbBGraph2() {
+        return bBGraph2;
+    }
+
+    public void setbBGraph2(BBGraph bBGraph2) {
+        this.bBGraph2 = bBGraph2;
+    }
+
+
+    
     
 }
