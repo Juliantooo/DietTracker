@@ -83,20 +83,33 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="cb_jenisMkn" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tf_idFood" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="tf_nmMakanan" min="-2" pref="125" max="-2" attributes="0"/>
-                                  <Component id="sp_kalori" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="sp_kalori" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <Component id="tf_idFood" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btn_tmbMkn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btn_updMkn" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="btn_delMkn" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lbl_totalKalori" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="27" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="tf_tanggal" min="-2" pref="134" max="-2" attributes="0"/>
+                              <Component id="tf_tanggal" min="-2" pref="102" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btn_tgl" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -107,12 +120,13 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tf_idFood" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="tf_tanggal" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_tgl" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -131,10 +145,22 @@
                                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="sp_kalori" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btn_tmbMkn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_updMkn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btn_delMkn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_totalKalori" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -147,7 +173,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="tf_idFood">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
+                <Property name="editable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_idFoodActionPerformed"/>
@@ -159,9 +185,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tf_nmMakanan">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
@@ -215,9 +238,54 @@
                       </Table>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbl_FoodDiaryMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="btn_tmbMkn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tambah"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_tmbMknActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_updMkn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_updMknActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_delMkn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hapus"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_delMknActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_tgl">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cari tanggal"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_tglActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Total Kalori ="/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbl_totalKalori">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">

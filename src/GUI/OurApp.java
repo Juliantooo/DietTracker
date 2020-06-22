@@ -9,8 +9,10 @@ import Controller.ControllerFoodDiary;
 import Model.ModUser;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -73,6 +75,12 @@ public class OurApp extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_FoodDiary = new javax.swing.JTable();
+        btn_tmbMkn = new javax.swing.JButton();
+        btn_updMkn = new javax.swing.JButton();
+        btn_delMkn = new javax.swing.JButton();
+        btn_tgl = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        lbl_totalKalori = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,7 +90,7 @@ public class OurApp extends javax.swing.JFrame {
 
         jLabel2.setText("ID");
 
-        tf_idFood.setText("jTextField1");
+        tf_idFood.setEditable(false);
         tf_idFood.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_idFoodActionPerformed(evt);
@@ -90,8 +98,6 @@ public class OurApp extends javax.swing.JFrame {
         });
 
         jLabel3.setText("Makanan");
-
-        tf_nmMakanan.setText("jTextField1");
 
         jLabel4.setText("Jenis");
 
@@ -114,7 +120,44 @@ public class OurApp extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tbl_FoodDiary.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbl_FoodDiaryMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tbl_FoodDiary);
+
+        btn_tmbMkn.setText("Tambah");
+        btn_tmbMkn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tmbMknActionPerformed(evt);
+            }
+        });
+
+        btn_updMkn.setText("Update");
+        btn_updMkn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updMknActionPerformed(evt);
+            }
+        });
+
+        btn_delMkn.setText("Hapus");
+        btn_delMkn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_delMknActionPerformed(evt);
+            }
+        });
+
+        btn_tgl.setText("Cari tanggal");
+        btn_tgl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tglActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Total Kalori =");
+
+        lbl_totalKalori.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,29 +173,41 @@ public class OurApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cb_jenisMkn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_idFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tf_nmMakanan, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sp_kalori, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(sp_kalori, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_idFood, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel5)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btn_tmbMkn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_updMkn))
+                    .addComponent(btn_delMkn)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_totalKalori)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tf_tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tf_tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_tgl))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(110, 110, 110))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(tf_idFood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(btn_tgl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -166,9 +221,19 @@ public class OurApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(sp_kalori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(sp_kalori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_tmbMkn)
+                            .addComponent(btn_updMkn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_delMkn)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(lbl_totalKalori)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Food Diary", jPanel1);
@@ -216,6 +281,36 @@ public class OurApp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_idFoodActionPerformed
 
+    private void btn_tmbMknActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tmbMknActionPerformed
+        // TODO add your handling code here:
+        cfd.insert();
+        cfd.isiTable();
+        cfd.reset_field();
+    }//GEN-LAST:event_btn_tmbMknActionPerformed
+
+    private void btn_tglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tglActionPerformed
+        // TODO add your handling code here:
+        cfd.isiTable();
+    }//GEN-LAST:event_btn_tglActionPerformed
+
+    private void tbl_FoodDiaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_FoodDiaryMouseClicked
+        // TODO add your handling code here:
+        cfd.isi_field(tbl_FoodDiary.getSelectedRow());
+    }//GEN-LAST:event_tbl_FoodDiaryMouseClicked
+
+    private void btn_updMknActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updMknActionPerformed
+        // TODO add your handling code here:
+        cfd.update();
+        cfd.isiTable();
+    }//GEN-LAST:event_btn_updMknActionPerformed
+
+    private void btn_delMknActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delMknActionPerformed
+        // TODO add your handling code here:
+        cfd.delete();
+        cfd.isiTable();
+        cfd.reset_field();
+    }//GEN-LAST:event_btn_delMknActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -253,6 +348,10 @@ public class OurApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_delMkn;
+    private javax.swing.JButton btn_tgl;
+    private javax.swing.JButton btn_tmbMkn;
+    private javax.swing.JButton btn_updMkn;
     private javax.swing.JComboBox<String> cb_jenisMkn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -260,10 +359,12 @@ public class OurApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lbl_totalKalori;
     private javax.swing.JSpinner sp_kalori;
     private javax.swing.JTable tbl_FoodDiary;
     private javax.swing.JTextField tf_idFood;
@@ -319,4 +420,36 @@ public class OurApp extends javax.swing.JFrame {
         this.cb_jenisMkn = cb_jenisMkn;
     }
 
+    public JButton getBtn_delMkn() {
+        return btn_delMkn;
+    }
+
+    public void setBtn_delMkn(JButton btn_delMkn) {
+        this.btn_delMkn = btn_delMkn;
+    }
+
+    public JButton getBtn_tmbMkn() {
+        return btn_tmbMkn;
+    }
+
+    public void setBtn_tmbMkn(JButton btn_tmbMkn) {
+        this.btn_tmbMkn = btn_tmbMkn;
+    }
+
+    public JButton getBtn_updMkn() {
+        return btn_updMkn;
+    }
+
+    public void setBtn_updMkn(JButton btn_updMkn) {
+        this.btn_updMkn = btn_updMkn;
+    }
+
+    public JLabel getLbl_totalKalori() {
+        return lbl_totalKalori;
+    }
+
+    public void setLbl_totalKalori(JLabel lbl_totalKalori) {
+        this.lbl_totalKalori = lbl_totalKalori;
+    }
+    
 }

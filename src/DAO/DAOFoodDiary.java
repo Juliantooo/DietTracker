@@ -88,7 +88,7 @@ public class DAOFoodDiary implements InterfaceFoodDiary{
             PreparedStatement st = connection.prepareStatement(cariPdTgl);
             st.setString(1, tgl);
             st.setInt(2, id_user);
-            ResultSet rs = st.executeQuery(cariPdTgl);
+            ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 ModFoodDiary fd = new ModFoodDiary();
                 fd.setId_food(rs.getInt("id_food"));
