@@ -45,10 +45,10 @@ public class DAOFoodDiary implements InterfaceFoodDiary{
             statement.setInt(4, id_user);
             statement.setString(5, tgl);
             statement.executeUpdate();
-            ResultSet rs = statement.getGeneratedKeys();
-            while (rs.next()) {
-                mfd.setId_food(rs.getInt(1));
-            }
+            //ResultSet rs = statement.getGeneratedKeys();
+            //while (rs.next()) {
+            //   mfd.setId_food(rs.getInt(1));
+            //}
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {

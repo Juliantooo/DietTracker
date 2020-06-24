@@ -32,7 +32,18 @@ public class OurApp extends javax.swing.JFrame {
     ModUser u;
     ControllerFoodDiary cfd;
     CtrlBB cbb;
+    LocalDateTime now;
 
+    public LocalDateTime getNow() {
+        return now;
+    }
+
+    public void setNow(LocalDateTime now) {
+        this.now = now;
+    }
+    
+    
+    
     public ModUser getU() {
         return u;
     }
@@ -48,7 +59,7 @@ public class OurApp extends javax.swing.JFrame {
         
         //set tanggal
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDateTime now = LocalDateTime.now();
+        now = LocalDateTime.now();
         tf_tanggal.setText(dtf.format(now));
         //panggil controller
         cfd = new ControllerFoodDiary(this);
@@ -89,6 +100,9 @@ public class OurApp extends javax.swing.JFrame {
         lbl_totalKalori = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         bBGraph2 = new GUI.BBGraph();
+        tf_bb = new javax.swing.JTextField();
+        btn_bb = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -245,21 +259,50 @@ public class OurApp extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Food Diary", jPanel1);
 
+        tf_bb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_bbActionPerformed(evt);
+            }
+        });
+
+        btn_bb.setText("Submit");
+        btn_bb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_bbActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Masukan berat badan hari ini");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bBGraph2, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(bBGraph2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_bb, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_bb)))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(bBGraph2, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addComponent(bBGraph2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 421, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_bb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_bb)
+                    .addComponent(jLabel8))
+                .addGap(37, 37, 37))
         );
 
         jTabbedPane1.addTab("Progress", jPanel2);
@@ -324,6 +367,16 @@ public class OurApp extends javax.swing.JFrame {
         cfd.reset_field();
     }//GEN-LAST:event_btn_delMknActionPerformed
 
+    private void tf_bbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_bbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_bbActionPerformed
+
+    private void btn_bbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bbActionPerformed
+        // TODO add your handling code here:
+        cbb.inputBB();
+        cbb.isiGraph();
+    }//GEN-LAST:event_btn_bbActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -362,6 +415,7 @@ public class OurApp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.BBGraph bBGraph2;
+    private javax.swing.JButton btn_bb;
     private javax.swing.JButton btn_delMkn;
     private javax.swing.JButton btn_tgl;
     private javax.swing.JButton btn_tmbMkn;
@@ -374,6 +428,7 @@ public class OurApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
@@ -381,6 +436,7 @@ public class OurApp extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_totalKalori;
     private javax.swing.JSpinner sp_kalori;
     private javax.swing.JTable tbl_FoodDiary;
+    private javax.swing.JTextField tf_bb;
     private javax.swing.JTextField tf_idFood;
     private javax.swing.JTextField tf_nmMakanan;
     private javax.swing.JFormattedTextField tf_tanggal;
@@ -474,7 +530,15 @@ public class OurApp extends javax.swing.JFrame {
         this.bBGraph2 = bBGraph2;
     }
 
+    public JTextField getTf_bb() {
+        return tf_bb;
+    }
 
+    public void setTf_bb(JTextField tf_bb) {
+        this.tf_bb = tf_bb;
+    }
+
+    
     
     
 }

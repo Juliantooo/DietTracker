@@ -17,7 +17,7 @@ import javafx.scene.chart.XYChart;
  *
  * @author mbohd
  */
-public class DataGenerator {
+public class DataGenerator{
 
     List<ModBB> lbb;
 

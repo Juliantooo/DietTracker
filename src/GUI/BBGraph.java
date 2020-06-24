@@ -34,6 +34,7 @@ public class BBGraph extends JFXPanel {
     public void setLbb(List<ModBB> lbb) {
         this.lbb = lbb;
         dg.setLbb(lbb);
+        Platform.runLater(this::refresh);
     }
     
     public BBGraph() {
@@ -49,8 +50,8 @@ public class BBGraph extends JFXPanel {
         setScene(scene);
     }
 
-    public void refresh() {
-        //dg = new DataGenerator(lbb);
+    private void refresh() {
+        
         scene = dg.buatScene();
         setScene(scene);
     }

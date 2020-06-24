@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -35,7 +36,17 @@ public class DAOBB implements IFBB{
 
     @Override
     public void insert(int id_user, ModBB bb) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+            statement.setInt(1, id_user);
+            statement.setDouble(2, bb.getBb());
+            statement.setString(3, bb.getTanggal());
+            statement.executeUpdate();
+                        
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOBB.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
@@ -65,12 +76,40 @@ public class DAOBB implements IFBB{
 
     @Override
     public void update(int id_user, ModBB bb) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement statement;
+        try {
+            statement = connection.prepareStatement(update, Statement.RETURN_GENERATED_KEYS);
+            statement.setDouble(1, bb.getBb());
+            statement.setInt(2, id_user);
+            statement.setString(3, bb.getTanggal());
+            statement.executeUpdate();
+            ResultSet rs = statement.getGeneratedKeys();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOBB.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
-    public List<ModBB> cariBB(int id_user, String tanggal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void isiBB(int id_user, ModBB bb) {
+        PreparedStatement statement;
+        int c=0;
+        try {
+            statement = connection.prepareStatement(selectCount, Statement.RETURN_GENERATED_KEYS);
+            statement.setInt(1, id_user);
+            statement.setString(2, bb.getTanggal());
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                c = rs.getInt("COUNT(*)");            
+            }
+            if(c>0){
+                update(id_user, bb);
+            }else{
+                insert(id_user, bb);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOBB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
     
 }

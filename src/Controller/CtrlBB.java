@@ -9,6 +9,7 @@ import DAO.DAOBB;
 import DAO.IFBB;
 import GUI.OurApp;
 import Model.ModBB;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -28,7 +29,14 @@ public class CtrlBB {
     public void isiGraph(){
         lbb = ifbb.get30Days(frame.getU().getId_user());
         frame.getbBGraph2().setLbb(lbb);
-        frame.getbBGraph2().refresh();
-
+        //frame.getbBGraph2().refresh();
+    }
+    
+    public void inputBB(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        ModBB bb = new ModBB();
+        bb.setBb(Double.parseDouble(frame.getTf_bb().getText()));
+        bb.setTanggal(dtf.format(frame.getNow()));
+        ifbb.isiBB(frame.getU().getId_user(), bb);
     }
 }
