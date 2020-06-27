@@ -12,6 +12,8 @@ package Model;
 public class ModUser {
     private String username;
     private int id_user;
+    
+    
 
     public String getUsername() {
         return username;

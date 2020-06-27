@@ -51,6 +51,22 @@ public class OurApp extends javax.swing.JFrame {
     public void setU(ModUser u) {
         this.u = u;
     }
+    
+    public OurApp(ModUser u) {
+        this.u = u;
+        
+        initComponents();
+        
+        //set tanggal
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        now = LocalDateTime.now();
+        tf_tanggal.setText(dtf.format(now));
+        //panggil controller
+        cfd = new ControllerFoodDiary(this);
+        cfd.isiTable();
+        cbb = new CtrlBB(this);
+        cbb.isiGraph();
+    }
 
     public OurApp() {
         u = new ModUser("u", 1);

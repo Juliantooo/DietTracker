@@ -5,6 +5,9 @@
  */
 package diettracker;
 
+import GUI.LoginForm;
+import GUI.OurApp;
+
 /**
  *
  * @author mbohd
@@ -16,6 +19,7 @@ public class DietTracker {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        new LoginForm().setVisible(true);
     }
     
 }
