@@ -7,6 +7,7 @@ package GUI;
 
 import Controller.ControllerFoodDiary;
 import Controller.CtrlBB;
+import Controller.CtrlBMI;
 import Model.ModBB;
 import Model.ModUser;
 import java.time.LocalDateTime;
@@ -32,6 +33,7 @@ public class OurApp extends javax.swing.JFrame {
     ModUser u;
     ControllerFoodDiary cfd;
     CtrlBB cbb;
+    CtrlBMI cbmi;
     LocalDateTime now;
 
     public LocalDateTime getNow() {
@@ -66,10 +68,13 @@ public class OurApp extends javax.swing.JFrame {
         cfd.isiTable();
         cbb = new CtrlBB(this);
         cbb.isiGraph();
+        cbmi = new CtrlBMI(this);
+        
+        
     }
 
     public OurApp() {
-        u = new ModUser("u", 1);
+       /* u = new ModUser("u", 1);
         
         initComponents();
         
@@ -82,6 +87,7 @@ public class OurApp extends javax.swing.JFrame {
         cfd.isiTable();
         cbb = new CtrlBB(this);
         cbb.isiGraph();
+        */
     }
 
     /**
@@ -119,6 +125,18 @@ public class OurApp extends javax.swing.JFrame {
         tf_bb = new javax.swing.JTextField();
         btn_bb = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        lb_ket = new javax.swing.JLabel();
+        lb_bmi = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        tf_abot = new javax.swing.JTextField();
+        tf_duwur = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_video = new javax.swing.JTable();
+        btn_bmi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -323,6 +341,107 @@ public class OurApp extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Progress", jPanel2);
 
+        jLabel9.setText("Berat");
+
+        jLabel10.setText("Tinggi");
+
+        lb_ket.setText("-");
+
+        lb_bmi.setText("0");
+
+        jLabel11.setText("BMI");
+
+        jLabel12.setText("Keterangan");
+
+        tf_abot.setText("jTextField1");
+
+        tf_duwur.setText("jTextField2");
+
+        tbl_video.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tbl_video.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbl_videoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tbl_video);
+
+        btn_bmi.setText("Submit");
+        btn_bmi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_bmiActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel11)
+                                        .addComponent(jLabel10))
+                                    .addGap(46, 46, 46))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel12)
+                                    .addGap(18, 18, 18)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(48, 48, 48)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_abot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_bmi, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_ket, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_duwur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btn_bmi))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(tf_abot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(tf_duwur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lb_bmi)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(lb_ket))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_bmi)))
+                .addContainerGap(408, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("BMI + Saran Olahraga", jPanel3);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -393,6 +512,16 @@ public class OurApp extends javax.swing.JFrame {
         cbb.isiGraph();
     }//GEN-LAST:event_btn_bbActionPerformed
 
+    private void btn_bmiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bmiActionPerformed
+        // TODO add your handling code here:
+        cbmi.ukurBMI();
+    }//GEN-LAST:event_btn_bmiActionPerformed
+
+    private void tbl_videoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_videoMouseClicked
+        // TODO add your handling code here:
+        cbmi.link(String.valueOf(tbl_video.getModel().getValueAt(tbl_video.getSelectedRow(), 4)));
+    }//GEN-LAST:event_tbl_videoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -432,12 +561,16 @@ public class OurApp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private GUI.BBGraph bBGraph2;
     private javax.swing.JButton btn_bb;
+    private javax.swing.JButton btn_bmi;
     private javax.swing.JButton btn_delMkn;
     private javax.swing.JButton btn_tgl;
     private javax.swing.JButton btn_tmbMkn;
     private javax.swing.JButton btn_updMkn;
     private javax.swing.JComboBox<String> cb_jenisMkn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -445,14 +578,22 @@ public class OurApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lb_bmi;
+    private javax.swing.JLabel lb_ket;
     private javax.swing.JLabel lbl_totalKalori;
     private javax.swing.JSpinner sp_kalori;
     private javax.swing.JTable tbl_FoodDiary;
+    private javax.swing.JTable tbl_video;
+    private javax.swing.JTextField tf_abot;
     private javax.swing.JTextField tf_bb;
+    private javax.swing.JTextField tf_duwur;
     private javax.swing.JTextField tf_idFood;
     private javax.swing.JTextField tf_nmMakanan;
     private javax.swing.JFormattedTextField tf_tanggal;
@@ -552,6 +693,46 @@ public class OurApp extends javax.swing.JFrame {
 
     public void setTf_bb(JTextField tf_bb) {
         this.tf_bb = tf_bb;
+    }
+
+    public JLabel getLb_bmi() {
+        return lb_bmi;
+    }
+
+    public void setLb_bmi(JLabel lb_bmi) {
+        this.lb_bmi = lb_bmi;
+    }
+
+    public JLabel getLb_ket() {
+        return lb_ket;
+    }
+
+    public void setLb_ket(JLabel lb_ket) {
+        this.lb_ket = lb_ket;
+    }
+
+    public JTable getTbl_video() {
+        return tbl_video;
+    }
+
+    public void setTbl_video(JTable tbl_video) {
+        this.tbl_video = tbl_video;
+    }
+
+    public JTextField getTf_abot() {
+        return tf_abot;
+    }
+
+    public void setTf_abot(JTextField tf_abot) {
+        this.tf_abot = tf_abot;
+    }
+
+    public JTextField getTf_duwur() {
+        return tf_duwur;
+    }
+
+    public void setTf_duwur(JTextField tf_duwur) {
+        this.tf_duwur = tf_duwur;
     }
 
     

@@ -38,11 +38,11 @@ public class DataGenerator{
     public Scene buatScene() {
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();
-        xAxis.setLabel("Month");
+        xAxis.setLabel("Tanggal");
         final LineChart<String, Number> lineChart
                 = new LineChart<>(xAxis, yAxis);
 
-        lineChart.setTitle("JavaFX graph ning njero jframe");
+        lineChart.setTitle("Graph Berat Badan");
 
         XYChart.Series series1 = new XYChart.Series();
         series1.setName("Seri 1");
@@ -55,7 +55,7 @@ public class DataGenerator{
                     bbNow = bb.getBb();
                 }
                 series1.getData().add(new XYChart.Data(bb.getTanggal(), bbNow));
-                System.out.println(String.valueOf(bbNow));
+                
             }
         }
 
