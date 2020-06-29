@@ -5,7 +5,11 @@
  */
 package GUI;
 
+import Controller.ControllerLogin;
 import Model.ModUser;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -16,8 +20,10 @@ public class LoginForm extends javax.swing.JFrame {
     /**
      * Creates new form LoginForm
      */
+    ControllerLogin cl;
     public LoginForm() {
         initComponents();
+        cl = new ControllerLogin(this);
     }
 
     /**
@@ -95,9 +101,16 @@ public class LoginForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ModUser u = new ModUser("u", 1);
-        new OurApp(u).setVisible(true);
+        //ModUser u = new ModUser("u", 1);
+        ModUser u = cl.login();
+        if(u==null){
+            System.err.println("null");
+            JOptionPane.showMessageDialog(null, "Gagal login");
+        }else{
+            new OurApp(u).setVisible(true);
         this.dispose();
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -143,4 +156,22 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JPasswordField tf_passwd;
     private javax.swing.JTextField tf_uname;
     // End of variables declaration//GEN-END:variables
+
+    public JPasswordField getTf_passwd() {
+        return tf_passwd;
+    }
+
+    public void setTf_passwd(JPasswordField tf_passwd) {
+        this.tf_passwd = tf_passwd;
+    }
+
+    public JTextField getTf_uname() {
+        return tf_uname;
+    }
+
+    public void setTf_uname(JTextField tf_uname) {
+        this.tf_uname = tf_uname;
+    }
+
+    
 }
