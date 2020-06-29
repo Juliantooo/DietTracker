@@ -22,7 +22,6 @@ import java.util.logging.Logger;
 public class DAOUser implements IFUser {
 
     Connection connection;
-    final String insert = "INSERT INTO food_diary (nama, jenis, kalori, id_user, tanggal) VALUES (?,?,?,?,?)";
     final String getUser = "SELECT * FROM user WHERE username=? AND password=?";
 
     public DAOUser() {
@@ -30,29 +29,22 @@ public class DAOUser implements IFUser {
     }
 
     @Override
-    public boolean cekUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public ModUser getUser(String username, String password) {
-        ModUser u = null;
+        ModUser u = new ModUser();
         //System.err.println("uname di getUser"+ username);
         //System.err.println("paswd di getUser"+password);
         try {
-            u = new ModUser();
             PreparedStatement st = connection.prepareStatement(getUser);
             st.setString(1, username);
             st.setString(2, password);
             ResultSet rs = st.executeQuery();
-            if (!rs.next()) {
-                return null;
-            }
+           
             while (rs.next()) {
-
+                //System.err.println(rs.getString("username"));
                 u.setUsername(rs.getString("username"));
                 u.setId_user(rs.getInt("id_user"));
             }
+            
 
         } catch (SQLException ex) {
             Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, ex);

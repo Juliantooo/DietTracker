@@ -24,8 +24,8 @@ public class ControllerLogin {
     }
     
     public ModUser login(){
-        System.err.println("user : "+frame.getTf_uname().getText());
-        System.err.println("passwd : "+String.valueOf(frame.getTf_passwd().getPassword()));
+        //System.err.println("user : "+frame.getTf_uname().getText());
+        //System.err.println("passwd : "+String.valueOf(frame.getTf_passwd().getPassword()));
         String username;
         String password;
         username = frame.getTf_uname().getText();

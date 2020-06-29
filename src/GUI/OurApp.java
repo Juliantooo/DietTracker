@@ -70,7 +70,7 @@ public class OurApp extends javax.swing.JFrame {
         cbb.isiGraph();
         cbmi = new CtrlBMI(this);
         
-        
+        System.err.println(this.getU().getUsername());
     }
 
     public OurApp() {

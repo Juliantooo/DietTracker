@@ -12,7 +12,6 @@ import Model.ModUser;
  * @author mbohd
  */
 public interface IFUser {
-    public boolean cekUser();
     public ModUser getUser(String username, String password);
     public void insert();
 }

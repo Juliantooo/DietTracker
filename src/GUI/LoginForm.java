@@ -21,6 +21,7 @@ public class LoginForm extends javax.swing.JFrame {
      * Creates new form LoginForm
      */
     ControllerLogin cl;
+
     public LoginForm() {
         initComponents();
         cl = new ControllerLogin(this);
@@ -103,14 +104,15 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         //ModUser u = new ModUser("u", 1);
         ModUser u = cl.login();
-        if(u==null){
-            System.err.println("null");
+        if (u == null) {
             JOptionPane.showMessageDialog(null, "Gagal login");
-        }else{
+        } else if (u.getId_user() == 0 | u.getUsername() == null) {
+            JOptionPane.showMessageDialog(null, "Gagal login");
+        } else {
             new OurApp(u).setVisible(true);
-        this.dispose();
+            this.dispose();
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -173,5 +175,4 @@ public class LoginForm extends javax.swing.JFrame {
         this.tf_uname = tf_uname;
     }
 
-    
 }
