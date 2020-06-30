@@ -12,6 +12,8 @@ import java.util.List;
  * @author Arcxt
  */
 public interface IFMealPlan {
-    public ModMealPlan getAll();
-    public ModMealPlan getAllVeg();
+    public ModMealPlan getDiet();
+    public ModMealPlan getGain();
+    public ModMealPlan getVegDiet();
+    public ModMealPlan getVegGain();
 }

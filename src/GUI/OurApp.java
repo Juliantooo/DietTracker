@@ -96,23 +96,11 @@ public class OurApp extends javax.swing.JFrame {
         tf_duwur.setText(String.valueOf(this.getU().getTinggi()));
         lb_useratas.setText(u.getUsername());
         
+        //System.out.println("vegan : "+u.isVegetarian());
+        
     }
 
     public OurApp() {
-       /* u = new ModUser("u", 1);
-        
-        initComponents();
-        
-        //set tanggal
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        now = LocalDateTime.now();
-        tf_tanggal.setText(dtf.format(now));
-        //panggil controller
-        cfd = new ControllerFoodDiary(this);
-        cfd.isiTable();
-        cbb = new CtrlBB(this);
-        cbb.isiGraph();
-        */
     }
 
     /**
@@ -644,11 +632,13 @@ public class OurApp extends javax.swing.JFrame {
         cbb.isiGraph();
         cbb.getLatestBB();
         lb_bbnow.setText(String.valueOf(bbNow));
+        
     }//GEN-LAST:event_btn_bbActionPerformed
 
     private void btn_bmiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bmiActionPerformed
         // TODO add your handling code here:
         cbmi.ukurBMI();
+        ctrlMeal.isiMeal();
     }//GEN-LAST:event_btn_bmiActionPerformed
 
     private void tbl_videoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_videoMouseClicked
