@@ -13,5 +13,5 @@ import Model.ModUser;
  */
 public interface IFUser {
     public ModUser getUser(String username, String password);
-    public void insert();
+    public void insert(String username , String password ,String vegetarian);
 }

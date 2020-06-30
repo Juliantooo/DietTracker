@@ -12,11 +12,18 @@ package Model;
 public class ModUser {
     private String username;
     private int id_user;
+    private String vegetarian;
 
     public ModUser() {
     }
-    
-    
+
+    public String isVegetarian() {
+        return vegetarian;
+    }
+
+    public void setVegetarian(String vegetarian) {
+        this.vegetarian = vegetarian;
+    }
 
     public String getUsername() {
         return username;
@@ -34,9 +41,10 @@ public class ModUser {
         this.id_user = id_user;
     }
 
-    public ModUser(String username, int id_user) {
+    public ModUser(String username, int id_user, String vegetarian) {
         this.username = username;
         this.id_user = id_user;
+        this.vegetarian = vegetarian;
     }
     
     

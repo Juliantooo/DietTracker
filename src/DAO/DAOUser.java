@@ -23,6 +23,7 @@ public class DAOUser implements IFUser {
 
     Connection connection;
     final String getUser = "SELECT * FROM user WHERE username=? AND password=?";
+    final String insert = "INSERT INTO user (username, password, vegetarian) VALUES (?,?,?)";
 
     public DAOUser() {
         this.connection = KoneksiDB.connection();
@@ -53,8 +54,17 @@ public class DAOUser implements IFUser {
     }
 
     @Override
-    public void insert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void insert(String username, String password, String vegetarian ) {
+        //To change body of generated methods, choose Tools | Templates.
+        try {
+            PreparedStatement st = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
+            st.setString(1, username);
+            st.setString(2, password);
+            st.setString(3, vegetarian);
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
