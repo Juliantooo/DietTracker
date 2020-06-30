@@ -6,10 +6,12 @@
 package GUI;
 
 import Controller.ControllerFoodDiary;
+import Controller.ControllerMealPlan;
 import Controller.CtrlBB;
 import Controller.CtrlBMI;
 import Model.ModBB;
 import Model.ModUser;
+import java.awt.Color;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -19,7 +21,9 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
 /**
  *
@@ -35,6 +39,9 @@ public class OurApp extends javax.swing.JFrame {
     CtrlBB cbb;
     CtrlBMI cbmi;
     LocalDateTime now;
+    ControllerMealPlan ctrlMeal;
+    
+    
 
     public LocalDateTime getNow() {
         return now;
@@ -65,12 +72,15 @@ public class OurApp extends javax.swing.JFrame {
         tf_tanggal.setText(dtf.format(now));
         //panggil controller
         cfd = new ControllerFoodDiary(this);
+        ctrlMeal =  new ControllerMealPlan(this);
+        ctrlMeal.isiMeal();
         cfd.isiTable();
         cbb = new CtrlBB(this);
         cbb.isiGraph();
         cbmi = new CtrlBMI(this);
-        
-        System.err.println(this.getU().getUsername());
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setLineWrap(true);
+        getContentPane().setBackground( Color.WHITE );
     }
 
     public OurApp() {
@@ -137,6 +147,11 @@ public class OurApp extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_video = new javax.swing.JTable();
         btn_bmi = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -442,6 +457,62 @@ public class OurApp extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("BMI + Saran Olahraga", jPanel3);
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setText(" Saran Meal Plan");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setMargin(new java.awt.Insets(8, 8, 8, 8));
+        jTextArea1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTextArea1AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane3.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(306, 306, 306)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(529, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Meal Plan", jPanel4);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -522,6 +593,22 @@ public class OurApp extends javax.swing.JFrame {
         cbmi.link(String.valueOf(tbl_video.getModel().getValueAt(tbl_video.getSelectedRow(), 4)));
     }//GEN-LAST:event_tbl_videoMouseClicked
 
+    private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTextArea1AncestorAdded
+    
+    public JTextArea getjTextArea1() {
+        return jTextArea1;
+    }
+
+    public void setjTextArea1(JTextArea jTextArea1) {
+        this.jTextArea1 = jTextArea1;
+    }
+
+
+
+
     /**
      * @param args the command line arguments
      */
@@ -553,7 +640,6 @@ public class OurApp extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new OurApp().setVisible(true);
-
             }
         });
     }
@@ -571,6 +657,7 @@ public class OurApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -582,9 +669,13 @@ public class OurApp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lb_bmi;
     private javax.swing.JLabel lb_ket;
     private javax.swing.JLabel lbl_totalKalori;
@@ -734,6 +825,7 @@ public class OurApp extends javax.swing.JFrame {
     public void setTf_duwur(JTextField tf_duwur) {
         this.tf_duwur = tf_duwur;
     }
+
 
     
     

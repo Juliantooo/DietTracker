@@ -13,6 +13,15 @@ public class ModUser {
     private String username;
     private int id_user;
     private String vegetarian;
+    private int BB;
+
+    public int getBB() {
+        return BB;
+    }
+
+    public void setBB(int BB) {
+        this.BB = BB;
+    }
 
     public ModUser() {
     }
@@ -41,10 +50,11 @@ public class ModUser {
         this.id_user = id_user;
     }
 
-    public ModUser(String username, int id_user, String vegetarian) {
+    public ModUser(String username, int id_user, String vegetarian, int BB) {
         this.username = username;
         this.id_user = id_user;
         this.vegetarian = vegetarian;
+        this.BB=BB;
     }
     
     
