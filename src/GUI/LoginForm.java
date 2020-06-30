@@ -7,6 +7,7 @@ package GUI;
 
 import Controller.ControllerLogin;
 import Model.ModUser;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -25,6 +26,7 @@ public class LoginForm extends javax.swing.JFrame {
     public LoginForm() {
         initComponents();
         cl = new ControllerLogin(this);
+        getContentPane().setBackground( Color.orange );
     }
 
     /**
@@ -44,6 +46,7 @@ public class LoginForm extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(253, 231, 86));
 
         jLabel1.setText("Username :");
 

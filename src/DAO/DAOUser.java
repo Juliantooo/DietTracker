@@ -45,6 +45,7 @@ public class DAOUser implements IFUser {
                 u = new ModUser();
                 u.setUsername(rs.getString("username"));
                 u.setId_user(rs.getInt("id_user"));
+                u.setVegetarian(rs.getString("vegetarian"));
             }
             
 
