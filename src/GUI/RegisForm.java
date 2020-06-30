@@ -49,6 +49,8 @@ public class RegisForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(240, 140, 22));
+
         jLabel1.setText("Register");
 
         jLabel2.setText("Username");
@@ -68,6 +70,7 @@ public class RegisForm extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.setBackground(new java.awt.Color(240, 140, 22));
         jCheckBox1.setText("Vegetarian");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
