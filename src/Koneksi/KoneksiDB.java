@@ -5,7 +5,7 @@
  */
 package Koneksi;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -26,11 +26,7 @@ public class KoneksiDB {
             data.setPassword("");
             data.setPort(3306);
             data.setServerName("localhost");
-            try {
-                data.setServerTimezone("UTC");
-            } catch (SQLException ex) {
-                Logger.getLogger(KoneksiDB.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            data.setServerTimezone("UTC");
             
             
             try {
