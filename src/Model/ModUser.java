@@ -14,6 +14,7 @@ public class ModUser {
     private int id_user;
     private String vegetarian;
     private int BB;
+    private int tinggi;
 
     public int getBB() {
         return BB;
@@ -56,6 +57,15 @@ public class ModUser {
         this.vegetarian = vegetarian;
         this.BB=BB;
     }
+
+    public int getTinggi() {
+        return tinggi;
+    }
+
+    public void setTinggi(int tinggi) {
+        this.tinggi = tinggi;
+    }
+    
     
     
 }

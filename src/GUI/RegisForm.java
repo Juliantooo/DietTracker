@@ -44,6 +44,9 @@ public class RegisForm extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
         jPasswordField3 = new javax.swing.JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
+        tf_tinggi = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -78,6 +81,16 @@ public class RegisForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Tinggi");
+
+        tf_tinggi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_tinggiActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("CM");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -89,38 +102,52 @@ public class RegisForm extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox1)
-                                    .addComponent(jPasswordField3))))))
-                .addContainerGap(130, Short.MAX_VALUE))
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jButton1))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPasswordField3)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jCheckBox1)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(tf_tinggi, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(46, 46, 46)
+                                                .addComponent(jLabel6)))
+                                        .addGap(0, 25, Short.MAX_VALUE)))))))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(tf_tinggi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -154,6 +181,10 @@ public class RegisForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void tf_tinggiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_tinggiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_tinggiActionPerformed
+
     public JCheckBox getjCheckBox1() {
         return jCheckBox1;
     }
@@ -178,7 +209,15 @@ public class RegisForm extends javax.swing.JFrame {
         this.jPasswordField3 = jPasswordField3;
     }
 
+    public JTextField getTf_tinggi() {
+        return tf_tinggi;
+    }
 
+    public void setTf_tinggi(JTextField tf_tinggi) {
+        this.tf_tinggi = tf_tinggi;
+    }
+
+    
 
     /**
      * @param args the command line arguments
@@ -222,8 +261,11 @@ public class RegisForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField tf_tinggi;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,14 +24,36 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="344" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lb_useratas" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lb_tinggiatas" min="-2" max="-2" attributes="0"/>
+                          <Component id="lb_bbnow" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jTabbedPane1" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -39,9 +61,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lb_bbnow" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lb_useratas" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lb_tinggiatas" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jTabbedPane1" pref="564" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -53,7 +86,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Comic Sans MS" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Aplikasi Ra Guno"/>
+        <Property name="text" type="java.lang.String" value="Diet Tracker"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
@@ -158,9 +191,9 @@
                                   <Component id="lbl_totalKalori" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -301,21 +334,18 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                              <Component id="bBGraph2" min="-2" pref="600" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tf_bb" min="-2" pref="64" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btn_bb" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      <Component id="bBGraph2" min="-2" pref="600" max="-2" attributes="0"/>
                       <EmptySpace pref="91" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="tf_bb" min="-2" pref="64" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btn_bb" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="272" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -324,13 +354,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bBGraph2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="421" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tf_bb" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btn_bb" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace pref="59" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -398,15 +428,17 @@
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="tf_abot" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lb_bmi" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="lb_ket" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="tf_duwur" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="tf_duwur" pref="50" max="32767" attributes="0"/>
+                                      <Component id="tf_abot" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="lb_ket" min="-2" pref="95" max="-2" attributes="0"/>
+                                  <Component id="lb_bmi" min="-2" pref="64" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="btn_bmi" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="88" max="32767" attributes="0"/>
+                      <EmptySpace pref="52" max="32767" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                   </Group>
@@ -414,11 +446,10 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="57" pref="57" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tf_abot" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -440,9 +471,11 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btn_bmi" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane1" pref="468" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="408" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -479,14 +512,11 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tf_abot">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tf_duwur">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_duwurActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
               <AuxValues>
@@ -571,7 +601,7 @@
                           <Component id="jLabel13" min="-2" pref="27" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" min="-2" pref="291" max="-2" attributes="0"/>
-                          <EmptySpace pref="529" max="32767" attributes="0"/>
+                          <EmptySpace pref="173" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -616,5 +646,35 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel14">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Berat badan : "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel15">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tinggi :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_tinggiatas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="tinggi"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_bbnow">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel17"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel16">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Halo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lb_useratas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="user"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

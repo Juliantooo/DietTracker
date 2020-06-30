@@ -39,4 +39,8 @@ public class CtrlBB {
         bb.setTanggal(dtf.format(frame.getNow()));
         ifbb.isiBB(frame.getU().getId_user(), bb);
     }
+    
+    public void getLatestBB(){
+        frame.setBbNow(ifbb.getLatest(frame.getU().getId_user()));
+    }
 }

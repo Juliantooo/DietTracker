@@ -23,7 +23,7 @@ public class DAOUser implements IFUser {
 
     Connection connection;
     final String getUser = "SELECT * FROM user WHERE username=? AND password=?";
-    final String insert = "INSERT INTO user (username, password, vegetarian) VALUES (?,?,?)";
+    final String insert = "INSERT INTO user (username, password, vegetarian, tinggi) VALUES (?,?,?, ?)";
 
     public DAOUser() {
         this.connection = KoneksiDB.connection();
@@ -46,6 +46,7 @@ public class DAOUser implements IFUser {
                 u.setUsername(rs.getString("username"));
                 u.setId_user(rs.getInt("id_user"));
                 u.setVegetarian(rs.getString("vegetarian"));
+                u.setTinggi(rs.getInt("tinggi"));
             }
             
 
@@ -56,13 +57,14 @@ public class DAOUser implements IFUser {
     }
 
     @Override
-    public void insert(String username, String password, String vegetarian ) {
+    public void insert(String username, String password, String vegetarian , int tinggi) {
         //To change body of generated methods, choose Tools | Templates.
         try {
             PreparedStatement st = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, username);
             st.setString(2, password);
             st.setString(3, vegetarian);
+            st.setInt(4, tinggi);
             st.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, ex);

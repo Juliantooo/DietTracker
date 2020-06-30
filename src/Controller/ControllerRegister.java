@@ -26,13 +26,15 @@ public class ControllerRegister {
         String username;
         String password;
         String vegetarian ;
+        int tinggi;
         username = frame.getjTextField1().getText();
         password = String.valueOf(frame.getjPasswordField3().getPassword());
+        tinggi = Integer.parseInt(frame.getTf_tinggi().getText());
         if(frame.getjCheckBox1().isSelected()){
             vegetarian =  frame.getjCheckBox1().getText();
         }else{
             vegetarian = "tidak";
         }
-        ifu.insert(username, password, vegetarian);
+        ifu.insert(username, password, vegetarian, tinggi);
     }
 }

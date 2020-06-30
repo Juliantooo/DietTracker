@@ -40,9 +40,17 @@ public class OurApp extends javax.swing.JFrame {
     CtrlBMI cbmi;
     LocalDateTime now;
     ControllerMealPlan ctrlMeal;
-    
-    
+    Double bbNow;
 
+    public Double getBbNow() {
+        return bbNow;
+    }
+
+    public void setBbNow(Double bbNow) {
+        this.bbNow = bbNow;
+    }
+    
+    
     public LocalDateTime getNow() {
         return now;
     }
@@ -81,6 +89,13 @@ public class OurApp extends javax.swing.JFrame {
         jTextArea1.setWrapStyleWord(true);
         jTextArea1.setLineWrap(true);
         getContentPane().setBackground( Color.WHITE );
+        lb_tinggiatas.setText(String.valueOf(this.getU().getTinggi()));
+        cbb.getLatestBB();
+        lb_bbnow.setText(String.valueOf(bbNow));
+        tf_abot.setText(String.valueOf(bbNow));
+        tf_duwur.setText(String.valueOf(this.getU().getTinggi()));
+        lb_useratas.setText(u.getUsername());
+        
     }
 
     public OurApp() {
@@ -152,11 +167,17 @@ public class OurApp extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        lb_tinggiatas = new javax.swing.JLabel();
+        lb_bbnow = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        lb_useratas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel1.setText("Aplikasi Ra Guno");
+        jLabel1.setText("Diet Tracker");
 
         jLabel2.setText("ID");
 
@@ -303,7 +324,7 @@ public class OurApp extends javax.swing.JFrame {
                             .addComponent(jLabel7)
                             .addComponent(lbl_totalKalori)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Food Diary", jPanel1);
@@ -328,30 +349,29 @@ public class OurApp extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(bBGraph2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_bb, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_bb)))
+                .addGap(86, 86, 86)
+                .addComponent(bBGraph2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(91, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addComponent(tf_bb, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_bb)
+                .addGap(272, 272, 272))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(bBGraph2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 421, Short.MAX_VALUE)
+                .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tf_bb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_bb)
                     .addComponent(jLabel8))
-                .addGap(37, 37, 37))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Progress", jPanel2);
@@ -368,9 +388,11 @@ public class OurApp extends javax.swing.JFrame {
 
         jLabel12.setText("Keterangan");
 
-        tf_abot.setText("jTextField1");
-
-        tf_duwur.setText("jTextField2");
+        tf_duwur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_duwurActionPerformed(evt);
+            }
+        });
 
         tbl_video.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -419,12 +441,13 @@ public class OurApp extends javax.swing.JFrame {
                                 .addComponent(jLabel9)
                                 .addGap(48, 48, 48)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tf_abot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lb_bmi, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lb_ket, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_duwur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tf_duwur, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                .addComponent(tf_abot))
+                            .addComponent(lb_ket, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lb_bmi, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btn_bmi))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
@@ -433,7 +456,6 @@ public class OurApp extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
@@ -451,8 +473,10 @@ public class OurApp extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addComponent(lb_ket))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_bmi)))
-                .addContainerGap(408, Short.MAX_VALUE))
+                        .addComponent(btn_bmi)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("BMI + Saran Olahraga", jPanel3);
@@ -497,7 +521,7 @@ public class OurApp extends javax.swing.JFrame {
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(529, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -513,26 +537,63 @@ public class OurApp extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Meal Plan", jPanel4);
 
+        jLabel14.setText("Berat badan : ");
+
+        jLabel15.setText("Tinggi :");
+
+        lb_tinggiatas.setText("tinggi");
+
+        lb_bbnow.setText("jLabel17");
+
+        jLabel16.setText("Halo");
+
+        lb_useratas.setText("user");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(344, 344, 344)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel15))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lb_useratas)
+                                .addGap(248, 248, 248)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel14)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lb_tinggiatas)
+                            .addComponent(lb_bbnow))
+                        .addGap(67, 67, 67))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTabbedPane1)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel14)
+                    .addComponent(lb_bbnow)
+                    .addComponent(jLabel16)
+                    .addComponent(lb_useratas))
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(lb_tinggiatas))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -581,6 +642,8 @@ public class OurApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         cbb.inputBB();
         cbb.isiGraph();
+        cbb.getLatestBB();
+        lb_bbnow.setText(String.valueOf(bbNow));
     }//GEN-LAST:event_btn_bbActionPerformed
 
     private void btn_bmiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bmiActionPerformed
@@ -597,6 +660,10 @@ public class OurApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jTextArea1AncestorAdded
+
+    private void tf_duwurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_duwurActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_duwurActionPerformed
     
     public JTextArea getjTextArea1() {
         return jTextArea1;
@@ -658,6 +725,9 @@ public class OurApp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -676,8 +746,11 @@ public class OurApp extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lb_bbnow;
     private javax.swing.JLabel lb_bmi;
     private javax.swing.JLabel lb_ket;
+    private javax.swing.JLabel lb_tinggiatas;
+    private javax.swing.JLabel lb_useratas;
     private javax.swing.JLabel lbl_totalKalori;
     private javax.swing.JSpinner sp_kalori;
     private javax.swing.JTable tbl_FoodDiary;

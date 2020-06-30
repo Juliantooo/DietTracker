@@ -18,4 +18,5 @@ public interface IFBB {
     public List<ModBB> get30Days(int id_user);
     public void update(int id_user, ModBB bb);
     public void isiBB(int id_user, ModBB bb);
+    public Double getLatest(int id_user);
 }

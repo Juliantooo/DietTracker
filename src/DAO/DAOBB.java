@@ -29,6 +29,7 @@ public class DAOBB implements IFBB{
     final String update = "UPDATE riwayat_bb SET bb=? WHERE id_user=? AND tanggal=?";
     final String select30days = "SELECT db_date AS tanggal, bb FROM time_dimension LEFT JOIN riwayat_bb ON riwayat_bb.tanggal=time_dimension.db_date AND riwayat_bb.id_user=?  WHERE db_date BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE() ORDER BY db_date";
     final String selectCount = "SELECT COUNT(*) FROM riwayat_bb WHERE id_user=? AND tanggal=?";
+    final String selectLatest = "SELECT * FROM riwayat_bb WHERE id_user=? ORDER BY tanggal DESC LIMIT 1";
 
     public DAOBB() {
         this.connection = KoneksiDB.connection();
@@ -110,6 +111,23 @@ public class DAOBB implements IFBB{
             Logger.getLogger(DAOBB.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+
+    @Override
+    public Double getLatest(int id_user) {
+        Double bb = 0.0;
+        try {
+            PreparedStatement st = connection.prepareStatement(selectLatest);
+            st.setInt(1, id_user);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                bb = rs.getDouble("bb");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOBB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.err.println("asu");
+        return bb;
     }
     
 }
