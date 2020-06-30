@@ -150,11 +150,9 @@ public class OurApp extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_video = new javax.swing.JTable();
         btn_bmi = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         lb_tinggiatas = new javax.swing.JLabel();
@@ -407,11 +405,30 @@ public class OurApp extends javax.swing.JFrame {
             }
         });
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setMargin(new java.awt.Insets(8, 8, 8, 8));
+        jTextArea1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTextArea1AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane3.setViewportView(jTextArea1);
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setText(" Saran Meal Plan");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -435,9 +452,15 @@ public class OurApp extends javax.swing.JFrame {
                             .addComponent(lb_ket, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lb_bmi, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btn_bmi))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(246, 246, 246))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -462,68 +485,16 @@ public class OurApp extends javax.swing.JFrame {
                             .addComponent(lb_ket))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_bmi)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE))
+                        .addGap(0, 52, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("BMI + Saran Olahraga", jPanel3);
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setText(" Saran Meal Plan");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
-        jTextArea1.setMargin(new java.awt.Insets(8, 8, 8, 8));
-        jTextArea1.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jTextArea1AncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jScrollPane3.setViewportView(jTextArea1);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(306, 306, 306)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Meal Plan", jPanel4);
+        jTabbedPane1.addTab("BMI & Saran", jPanel3);
 
         jLabel14.setText("Berat badan : ");
 
@@ -581,59 +552,17 @@ public class OurApp extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(lb_tinggiatas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tf_idFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_idFoodActionPerformed
+    private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_idFoodActionPerformed
 
-    private void btn_tmbMknActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tmbMknActionPerformed
-        // TODO add your handling code here:
-        cfd.insert();
-        cfd.isiTable();
-        cfd.reset_field();
-    }//GEN-LAST:event_btn_tmbMknActionPerformed
-
-    private void btn_tglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tglActionPerformed
-        // TODO add your handling code here:
-        cfd.isiTable();
-    }//GEN-LAST:event_btn_tglActionPerformed
-
-    private void tbl_FoodDiaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_FoodDiaryMouseClicked
-        // TODO add your handling code here:
-        cfd.isi_field(tbl_FoodDiary.getSelectedRow());
-    }//GEN-LAST:event_tbl_FoodDiaryMouseClicked
-
-    private void btn_updMknActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updMknActionPerformed
-        // TODO add your handling code here:
-        cfd.update();
-        cfd.isiTable();
-    }//GEN-LAST:event_btn_updMknActionPerformed
-
-    private void btn_delMknActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delMknActionPerformed
-        // TODO add your handling code here:
-        cfd.delete();
-        cfd.isiTable();
-        cfd.reset_field();
-    }//GEN-LAST:event_btn_delMknActionPerformed
-
-    private void tf_bbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_bbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_bbActionPerformed
-
-    private void btn_bbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bbActionPerformed
-        // TODO add your handling code here:
-        cbb.inputBB();
-        cbb.isiGraph();
-        cbb.getLatestBB();
-        lb_bbnow.setText(String.valueOf(bbNow));
-        
-    }//GEN-LAST:event_btn_bbActionPerformed
+    }//GEN-LAST:event_jTextArea1AncestorAdded
 
     private void btn_bmiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bmiActionPerformed
         // TODO add your handling code here:
@@ -646,14 +575,56 @@ public class OurApp extends javax.swing.JFrame {
         cbmi.link(String.valueOf(tbl_video.getModel().getValueAt(tbl_video.getSelectedRow(), 4)));
     }//GEN-LAST:event_tbl_videoMouseClicked
 
-    private void jTextArea1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTextArea1AncestorAdded
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jTextArea1AncestorAdded
-
     private void tf_duwurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_duwurActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_duwurActionPerformed
+
+    private void btn_bbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bbActionPerformed
+        // TODO add your handling code here:
+        cbb.inputBB();
+        cbb.isiGraph();
+        cbb.getLatestBB();
+        lb_bbnow.setText(String.valueOf(bbNow));
+
+    }//GEN-LAST:event_btn_bbActionPerformed
+
+    private void tf_bbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_bbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_bbActionPerformed
+
+    private void btn_tglActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tglActionPerformed
+        // TODO add your handling code here:
+        cfd.isiTable();
+    }//GEN-LAST:event_btn_tglActionPerformed
+
+    private void btn_delMknActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_delMknActionPerformed
+        // TODO add your handling code here:
+        cfd.delete();
+        cfd.isiTable();
+        cfd.reset_field();
+    }//GEN-LAST:event_btn_delMknActionPerformed
+
+    private void btn_updMknActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updMknActionPerformed
+        // TODO add your handling code here:
+        cfd.update();
+        cfd.isiTable();
+    }//GEN-LAST:event_btn_updMknActionPerformed
+
+    private void btn_tmbMknActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tmbMknActionPerformed
+        // TODO add your handling code here:
+        cfd.insert();
+        cfd.isiTable();
+        cfd.reset_field();
+    }//GEN-LAST:event_btn_tmbMknActionPerformed
+
+    private void tbl_FoodDiaryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_FoodDiaryMouseClicked
+        // TODO add your handling code here:
+        cfd.isi_field(tbl_FoodDiary.getSelectedRow());
+    }//GEN-LAST:event_tbl_FoodDiaryMouseClicked
+
+    private void tf_idFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_idFoodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_idFoodActionPerformed
     
     public JTextArea getjTextArea1() {
         return jTextArea1;
@@ -729,8 +700,6 @@ public class OurApp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

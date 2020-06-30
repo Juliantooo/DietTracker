@@ -8,6 +8,7 @@ package GUI;
 import Controller.ControllerLogin;
 import Model.ModUser;
 import java.awt.Color;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -117,7 +118,9 @@ public class LoginForm extends javax.swing.JFrame {
         } else if (u.getId_user() == 0 | u.getUsername() == null) {
             JOptionPane.showMessageDialog(null, "Gagal login");
         } else {
-            new OurApp(u).setVisible(true);
+            OurApp x = new OurApp(u);
+            x.setVisible(true);
+            x.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             this.dispose();
         }
 
@@ -127,7 +130,7 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         RegisForm regis = new RegisForm();
         regis.setVisible(true);
-        this.dispose();
+        //this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**
