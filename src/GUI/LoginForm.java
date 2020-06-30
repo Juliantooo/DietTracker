@@ -110,7 +110,7 @@ public class LoginForm extends javax.swing.JFrame {
         //ModUser u = new ModUser("u", 1);
         ModUser u = cl.login();
         if (u == null) {
-            JOptionPane.showMessageDialog(null, "Gagal login");
+            JOptionPane.showMessageDialog(null, "Gagal login gan");
         } else if (u.getId_user() == 0 | u.getUsername() == null) {
             JOptionPane.showMessageDialog(null, "Gagal login");
         } else {

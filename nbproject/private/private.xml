@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/Julianto%20Fajar/Documents/NetBeansProjects/DietTracker/src/Controller/ControllerFoodDiary.java</file>
             <file>file:/C:/Users/Julianto%20Fajar/Documents/NetBeansProjects/DietTracker/src/Model/ModUser.java</file>
             <file>file:/C:/Users/Julianto%20Fajar/Documents/NetBeansProjects/DietTracker/src/GUI/LoginForm.java</file>
@@ -15,6 +16,17 @@
             <file>file:/C:/Users/Julianto%20Fajar/Documents/NetBeansProjects/DietTracker/src/DAO/IFUser.java</file>
             <file>file:/C:/Users/Julianto%20Fajar/Documents/NetBeansProjects/DietTracker/src/GUI/RegisForm.java</file>
             <file>file:/C:/Users/Julianto%20Fajar/Documents/NetBeansProjects/DietTracker/src/Controller/CtrlBB.java</file>
+=======
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/DAO/DAOFoodDiary.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/DAO/IFUser.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/GUI/OurApp.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/DAO/DAOUser.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/Koneksi/KoneksiDB.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/GUI/LoginForm.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/Controller/ControllerLogin.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/Controller/ControllerFoodDiary.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/Model/ModUser.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>

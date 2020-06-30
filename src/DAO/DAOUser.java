@@ -31,7 +31,7 @@ public class DAOUser implements IFUser {
 
     @Override
     public ModUser getUser(String username, String password) {
-        ModUser u = new ModUser();
+        ModUser u = null;
         //System.err.println("uname di getUser"+ username);
         //System.err.println("paswd di getUser"+password);
         try {
@@ -39,9 +39,10 @@ public class DAOUser implements IFUser {
             st.setString(1, username);
             st.setString(2, password);
             ResultSet rs = st.executeQuery();
-           
+            
             while (rs.next()) {
                 //System.err.println(rs.getString("username"));
+                u = new ModUser();
                 u.setUsername(rs.getString("username"));
                 u.setId_user(rs.getInt("id_user"));
             }
