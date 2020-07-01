@@ -121,7 +121,6 @@ public class DAOBB implements IFBB{
         } catch (SQLException ex) {
             Logger.getLogger(DAOBB.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.err.println("asu");
         return bb;
     }
     
