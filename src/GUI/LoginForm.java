@@ -125,7 +125,6 @@ public class LoginForm extends javax.swing.JFrame {
         } else {
             OurApp x = new OurApp(u);
             x.setVisible(true);
-            x.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             this.dispose();
         }
 
