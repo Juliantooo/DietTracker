@@ -8,10 +8,13 @@ package GUI;
 import Controller.ControllerLogin;
 import Model.ModUser;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -25,6 +28,7 @@ public class LoginForm extends javax.swing.JFrame {
     ControllerLogin cl;
 
     public LoginForm() {
+        
         initComponents();
         cl = new ControllerLogin(this);
         getContentPane().setBackground( Color.orange );
@@ -53,6 +57,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel2.setText("Password :");
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/login-16.png"))); // NOI18N
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,10 +105,10 @@ public class LoginForm extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(tf_passwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(119, Short.MAX_VALUE))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         pack();
@@ -130,7 +135,7 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         RegisForm regis = new RegisForm();
         regis.setVisible(true);
-        //this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**

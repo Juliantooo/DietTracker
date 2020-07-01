@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface IFBB {
     public void insert(int id_user, ModBB bb);
-    public void delete(int no);
+
     public List<ModBB> get30Days(int id_user);
     public void update(int id_user, ModBB bb);
     public void isiBB(int id_user, ModBB bb);

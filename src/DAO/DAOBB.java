@@ -51,11 +51,6 @@ public class DAOBB implements IFBB{
     }
 
     @Override
-    public void delete(int no) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public List<ModBB> get30Days(int id_user) {
         List<ModBB> lbb = null;
         try {

@@ -47,6 +47,7 @@ public class RegisForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         tf_tinggi = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         jLabel3.setText("jLabel3");
 
@@ -91,6 +92,13 @@ public class RegisForm extends javax.swing.JFrame {
 
         jLabel6.setText("CM");
 
+        jToggleButton1.setText("Cancel");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -112,17 +120,23 @@ public class RegisForm extends javax.swing.JFrame {
                                     .addComponent(jLabel5)
                                     .addComponent(jButton1)
                                     .addComponent(jLabel4))
-                                .addGap(19, 19, 19)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPasswordField3)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox1)
+                                            .addComponent(jPasswordField3)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(tf_tinggi, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel6)))
-                                        .addGap(0, 67, Short.MAX_VALUE)))))))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jCheckBox1)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(tf_tinggi, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel6)))
+                                                .addGap(0, 67, Short.MAX_VALUE))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jToggleButton1)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap(102, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -145,9 +159,11 @@ public class RegisForm extends javax.swing.JFrame {
                     .addComponent(tf_tinggi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jToggleButton1)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,6 +200,13 @@ public class RegisForm extends javax.swing.JFrame {
     private void tf_tinggiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_tinggiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_tinggiActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+         LoginForm login = new LoginForm();
+         login.setVisible(true);
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     public JCheckBox getjCheckBox1() {
         return jCheckBox1;
@@ -266,6 +289,7 @@ public class RegisForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField tf_tinggi;
     // End of variables declaration//GEN-END:variables
 }
