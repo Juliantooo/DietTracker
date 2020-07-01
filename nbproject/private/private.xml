@@ -5,15 +5,17 @@
         <group>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/DAO/IFMealPlan.java</file>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/Controller/ControllerMealPlan.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/GUI/LoginForm.java</file>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/GUI/OurApp.java</file>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/Controller/CtrlBB.java</file>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/DAO/DAOUser.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/diettracker/DietTracker.java</file>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/DAO/DAOBB.java</file>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/GUI/RegisForm.java</file>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/Controller/CtrlBMI.java</file>
-            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/GUI/LoginForm.java</file>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/Controller/ControllerLogin.java</file>
             <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/DAO/DAOMealPlan.java</file>
+            <file>file:/C:/Users/mbohd/Documents/Uas%20PBO/DietTracker/src/DAO/IFBB.java</file>
         </group>
     </open-files>
 </project-private>
