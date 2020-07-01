@@ -49,9 +49,6 @@ public class CtrlBMI {
         frame.getTf_duwur().setText("");
     }
     
-    public void insertTbBb(){
-        
-    }
     
     public void ukurBMI(){
         DecimalFormat dc = new DecimalFormat("#.#");
